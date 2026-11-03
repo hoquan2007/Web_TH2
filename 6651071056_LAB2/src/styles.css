@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: 'Be Vietnam Pro', sans-serif; font-synthesis: none; scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .4; }
+:focus-visible { outline: 3px solid #059669; outline-offset: 3px; }
+::selection { background: #a7e9c0; color: #103e2a; }
+
+@layer components {
+  .container-wide { @apply mx-auto w-full max-w-[1512px] px-5 sm:px-8 lg:px-12 xl:px-16; }
+  .hero-field { background: radial-gradient(circle at 12% 40%, #21664a, transparent 44%), #123d2b; }
+  .hero-ticket { display: grid; min-height: 540px; grid-template-columns: 1.06fr .94fr; box-shadow: 0 20px 65px #071c1436; }
+  .hero-ticket-copy { min-width: 0; }
+  .hero-ticket-photo { min-width: 0; }
+  .site-header { box-shadow: 0 1px 3px #1b38200d; }
+  .brand-logo { @apply font-editorial text-[33px] font-bold leading-none tracking-[-.08em]; }
+  .brand-dot { color: #059669; }
+  .icon-button { @apply inline-flex h-11 w-11 items-center justify-center text-ink transition-colors hover:bg-[#deebe0] dark:text-[#e8f4e9] dark:hover:bg-[#294032]; }
+  .count-dot { @apply absolute right-2 top-2 h-[7px] w-[7px] rounded-full bg-emerald-500; }
+  .header-cta { @apply bg-ink px-5 py-3 text-[12px] font-bold text-white transition-colors hover:bg-emerald-600 dark:bg-emerald-600 dark:hover:bg-[#056343]; }
+  .nav-link { @apply border-b-2 border-transparent py-6 text-[12px] font-bold text-[#54675a] transition-colors hover:text-emerald-600 dark:text-[#bfcec0]; }
+  .nav-active { @apply border-emerald-500 text-ink dark:text-white; }
+  .skip-link { @apply fixed left-3 top-3 z-[100] -translate-y-[150%] bg-white px-5 py-3 text-black focus:translate-y-0; }
+  .primary-button { @apply inline-flex min-h-12 items-center justify-center gap-3 bg-emerald-600 px-6 py-3 text-[13px] font-bold text-white transition-colors hover:bg-[#035939] dark:bg-emerald-600 dark:hover:bg-[#03653f]; }
+  .secondary-button { @apply inline-flex min-h-12 items-center justify-center gap-3 border border-[#9fb5a6] px-6 py-3 text-[13px] font-bold text-ink transition-colors hover:border-emerald-600 hover:bg-[#e5f0e7] dark:border-[#65816b] dark:text-[#eef6ee] dark:hover:bg-[#294334]; }
+  .section-kicker { @apply text-[11px] font-extrabold uppercase tracking-[.16em] text-emerald-600 dark:text-[#8de2ab]; }
+  .section-heading { @apply font-editorial text-[clamp(2.5rem,4.3vw,4.8rem)] font-semibold leading-[1.07] tracking-[-.055em]; }
+  .filter-chip { @apply shrink-0 border border-transparent px-5 py-2.5 text-[12px] font-semibold text-[#4e6453] transition-colors hover:bg-[#e1ebe1] dark:text-[#c3d2c4] dark:hover:bg-[#2d4935]; }
+  .filter-chip-active { @apply border-emerald-600 bg-emerald-600 text-white hover:bg-[#046a4c] dark:text-white dark:hover:bg-[#046a4c]; }
+  .search-field { @apply h-[52px] w-full border border-[#c3d3c5] bg-white pl-12 pr-12 text-[13px] text-ink outline-none transition-colors placeholder:text-[#77897a] focus:border-emerald-600 dark:border-[#475e4b] dark:bg-[#1b2c20] dark:text-white dark:placeholder:text-[#acbdb1]; }
+  .event-card { @apply min-w-0 overflow-hidden border border-[#e0e6df] transition-shadow hover:shadow-[0_12px_38px_#143a211a] dark:border-[#354c3a]; }
+  .event-card:hover .event-card-image { transform: scale(1.06); }
+  .favorite-button { @apply flex h-10 w-10 items-center justify-center bg-white text-[#254934] shadow-sm transition-colors hover:bg-[#deebe1]; }
+  .favorite-button.is-favorite { @apply bg-emerald-600 text-white; }
+  .steps-slip { box-shadow: 12px 12px 0 #d7e8d8; }
+  .step-line { @apply grid grid-cols-[26px_1fr_18px] items-start gap-4; }
+  .step-line > svg:first-child { @apply mt-1 text-emerald-600; }
+  .step-line > svg:last-child { @apply mt-1 text-emerald-600; }
+  .step-line h3 { @apply text-[14px] font-bold; }
+  .step-line p { @apply mt-2 text-[12px] leading-[1.85] text-[#687d70] dark:text-[#bdd1c1]; }
+  .footer-link { @apply text-[12px] text-[#b9cfbf] transition-colors hover:text-white; }
+  .booking-aside { box-shadow: 0 13px 50px #17462b10; }
+  .quantity-button { @apply flex h-11 w-11 items-center justify-center text-emerald-600 hover:bg-[#e5f0e7] dark:hover:bg-[#2b4834]; }
+  .form-label { @apply block text-[12px] font-bold; }
+  .form-input { @apply mt-2 h-12 w-full border border-[#c1d1c4] bg-white px-4 text-[13px] text-ink focus:border-emerald-600 dark:border-[#4c6552] dark:bg-[#122319] dark:text-white; }
+  .form-input[aria-invalid='true'] { @apply border-red-600; }
+  .form-error { @apply mt-2 text-[12px] font-medium text-red-700 dark:text-red-300; }
+  .empty-panel { @apply mt-12 flex min-h-[330px] flex-col items-center justify-center bg-white px-5 py-16 text-center dark:bg-[#1a2b21]; }
+  .ticket-receipt { border-left: 5px solid #059669; box-shadow: 0 8px 38px #143e2110; }
+}
+@keyframes appear { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.animate-appear { animation: appear .55s both; }
+@media (max-width: 900px) { .hero-ticket { grid-template-columns: 1fr; } .hero-ticket-photo { min-height: 420px; } }
+@media (max-width: 639px) { .hero-ticket { min-height: unset; } .hero-ticket-photo { min-height: 340px; } .steps-slip { box-shadow: 6px 6px 0 #d7e8d8; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
