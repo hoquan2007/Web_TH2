@@ -1,0 +1,7 @@
+Trang chủ: 8 sự kiện đầu tiên hiển thị.
+Favorites: thêm, lưu localStorage, tải lại và hiển thị ở /favorites.
+Dark mode: thiết lập dark và tồn tại sau khi reload.
+Infinite Scroll: từ 8 lên đầy đủ 24 bản ghi qua tự tải/nút xem thêm.
+Đặt vé: modal Escape, validation, xác nhận, lưu vé, xem /tickets.
+Mobile 390px: trang hiển thị, không tràn ngang.
+Không có uncaught pageerror.
