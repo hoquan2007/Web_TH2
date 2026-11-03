@@ -1,0 +1,17 @@
+node_modules
+dist
+.env
+.env.*
+!.env.example
+.vercel
+coverage
+.DS_Store
+*.local
+*.log
+*.err
+tsconfig.tsbuildinfo
+output/preview/
+evidence/page@*.webm
+
+.vercel
+.env*
